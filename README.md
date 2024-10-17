@@ -75,8 +75,9 @@ python3 app.py
 ## Screenshots
 ![Screenshot from 2024-10-17 16-47-59](https://github.com/user-attachments/assets/0b6cacaa-91c2-4cb2-beeb-2333f672309f)
 ![Screenshot from 2024-10-17 16-48-10](https://github.com/user-attachments/assets/8123d4bf-65f1-4ead-969a-d20a9b13aaaf)
-![Screenshot from 2024-10-17 16-48-33](https://github.com/user-attachments/assets/cd608481-284f-48de-bce9-baab5a73b733)
 ![Screenshot from 2024-10-17 16-48-45](https://github.com/user-attachments/assets/f2ac9a64-6f9e-4bdd-994c-26f236a4db9a)
+![Screenshot from 2024-10-17 16-48-33](https://github.com/user-attachments/assets/cd608481-284f-48de-bce9-baab5a73b733)
+![Screenshot from 2024-10-17 16-57-41](https://github.com/user-attachments/assets/e2540e24-f05c-4d30-9161-1a1940d7cf54)
 
 
 
