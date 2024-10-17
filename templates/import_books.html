@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Import Books - Library Management System{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Import Books</h1>
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form action="{{ url_for('import_books') }}" method="POST">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                Book Title
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" name="title" type="text" placeholder="Enter book title" required>
+        </div>
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="num_books">
+                Number of Books to Import
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="num_books" name="num_books" type="number" min="1" placeholder="Enter number of books" required>
+        </div>
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Import Books
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

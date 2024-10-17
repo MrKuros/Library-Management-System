@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Transactions - Library Management System{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Transactions</h1>
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white">
+        <thead class="bg-gray-100">
+            <tr>
+                <th class="py-2 px-4 border-b">Member</th>
+                <th class="py-2 px-4 border-b">Book</th>
+                <th class="py-2 px-4 border-b">Issue Date</th>
+                <th class="py-2 px-4 border-b">Return  Date</th>
+                <th class="py-2 px-4 border-b">Fee</th>
+                <th class="py-2 px-4 border-b">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td class="py-2 px-4 border-b">{{ transaction.member.name }}</td>
+                <td class="py-2 px-4 border-b">{{ transaction.book.title }}</td>
+                <td class="py-2 px-4 border-b">{{ transaction.issue_date.strftime('%Y-%m-%d') }}</td>
+                <td class="py-2 px-4 border-b">{{ transaction.return_date.strftime('%Y-%m-%d') if transaction.return_date else 'Not returned' }}</td>
+                <td class="py-2 px-4 border-b">₹{{ transaction.fee }}</td>
+                <td class="py-2 px-4 border-b">
+                    {% if not transaction.return_date %}
+                    <form action="{{ url_for('return_book', transaction_id=transaction.id) }}" method="POST">
+                        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded text-sm">Return Book</button>
+                    </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home - Library Management System{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Welcome to the Library Management System</h1>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Manage Books -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Books</h2>
+        <p class="text-gray-600 mb-4">Manage the library's book collection.</p>
+        <a href="{{ url_for('books') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            Go to Books
+        </a>
+    </div>
+    
+    <!-- Issue Books -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Issue Books</h2>
+        <p class="text-gray-600 mb-4">Issue a book from the library.</p>
+        <a href="{{ url_for('issue_book') }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
+            Issue Books
+        </a>
+    </div>
+    
+    <!-- Return Books -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Return Books</h2>
+        <p class="text-gray-600 mb-4">Return a book to the library.</p>
+        <a href="{{ url_for('transactions') }}" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+            Return Books
+        </a>
+    </div>
+    
+    <!-- Manage Members -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Members</h2>
+        <p class="text-gray-600 mb-4">Manage library members and their accounts.</p>
+        <a href="{{ url_for('members') }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+            Go to Members
+        </a>
+    </div>
+    
+    <!-- Import Books -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Import Books</h2>
+        <p class="text-gray-600 mb-4">Import books from the Frappe API.</p>
+        <a href="{{ url_for('import_books') }}" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">
+            Import Books
+        </a>
+    </div>
+</div>
+{% endblock %}

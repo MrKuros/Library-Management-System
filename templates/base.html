@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library Management System{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="{{ url_for('home') }}" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Library Management</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="{{ url_for('home') }}" class="py-4 px-2 text-gray-500 hover:text-gray-900">Home</a>
+                        <a href="{{ url_for('books') }}" class="py-4 px-2 text-gray-500 hover:text-gray-900">Books</a>
+                        <a href="{{ url_for('members') }}" class="py-4 px-2 text-gray-500 hover:text-gray-900">Members</a>
+						<a href="{{ url_for('issue_book') }}" class="py-4 px-2 text-gray-500 hover:text-gray-900">Issue Book</a>
+ 						<a href="{{ url_for('transactions') }}" class="py-4 px-2 text-gray-500 hover:text-gray-900">Transactions</a>
+                        <a href="{{ url_for('import_books') }}" class="py-4 px-2 text-gray-500 hover:text-gray-900">Import Books</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 px-4">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4" role="alert">
+                        <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
