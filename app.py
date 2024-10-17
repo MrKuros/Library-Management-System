@@ -3,7 +3,6 @@ import requests
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy.orm import relationship, joinedload
-from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://your_username:your_password@localhost/library_db'
@@ -11,7 +10,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'dummy_secret_key'
 
 mysql = SQLAlchemy(app)
-migrate = Migrate(app, mysql)
 
 # Models retrieved from database
 class Book(mysql.Model):
